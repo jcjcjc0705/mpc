@@ -3,10 +3,10 @@ services:
     image: ${IMAGE}
     stdin_open: true
     tty: true
-    ipc: host
     environment:
       - ROS_DOMAIN_ID=${ROS_DOMAIN_ID}
       - FASTDDS_BUILTIN_TRANSPORTS=UDPv4
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/workspaces/fastdds_wsl.xml
       - MPC_CONFIG_PATH=/workspaces/config.json
     network_mode: host
     volumes:
